@@ -1,0 +1,26 @@
+.profile-menu-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .menu-item-text {
+        font-size: 15px;
+        font-weight: 600;
+        color: #888;
+        margin: 0px 5px;
+    }
+
+    .profile-icon {
+        font-size: 22px;
+        color: #7451f8;
+    }
+
+    .menu-logout {
+        @extend .menu-item-text;
+        color: red
+    }
+}
+
+.avatar {
+    color: #fff;
+}
