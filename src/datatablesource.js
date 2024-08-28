@@ -30,9 +30,9 @@ export const userColumns = [
     width: 160,
     renderCell: (params) => {
       return (
-        <div className={`cellWithStatus ${params.row.status}`}>
+        <span className={`cellWithStatus ${params.row.status}`}>
           {params.row.status}
-        </div>
+        </span>
       );
     },
   },
