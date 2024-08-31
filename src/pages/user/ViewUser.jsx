@@ -1,15 +1,11 @@
-import "./single.scss";
-import Sidebar from "../../components/sidebar/Sidebar";
-import Navbar from "../../components/navbar/Navbar";
+import "./viewUser.scss";
 import Chart from "../../components/chart/Chart";
 import List from "../../components/table/Table";
 
-const Single = () => {
+const ViewUser = () => {
   return (
     <div className="single">
-      <Sidebar />
       <div className="singleContainer">
-        <Navbar />
         <div className="top">
           <div className="left">
             <div className="editButton">Edit</div>
@@ -48,12 +44,12 @@ const Single = () => {
           </div>
         </div>
         <div className="bottom">
-        <h1 className="title">Last Transactions</h1>
-          <List/>
+          <h1 className="title">Last Transactions</h1>
+          <List />
         </div>
       </div>
     </div>
   );
 };
 
-export default Single;
+export default ViewUser;

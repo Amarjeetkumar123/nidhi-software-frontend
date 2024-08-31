@@ -4,6 +4,8 @@ import logo from '../../assets/logo.png'
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { IoEyeOutline } from "react-icons/io5";
+import { IoEyeOffOutline } from "react-icons/io5";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -12,7 +14,11 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -39,8 +45,12 @@ const Login = () => {
           <input type="text" id="username" className="login-input" placeholder="Enter your username / email" onChange={(e) => setEmail(e.target.value)} />
 
           <label className="login-label" htmlFor="password">Password</label>
-          <input type="password" id="password" className="login-input" placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)} />
-
+          <div className="login-password">
+            <input type={passwordVisible ? "text" : "password"} id="password" className="login-input" placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)} />
+            <span className="password-toggle-icon" onClick={(e) => setPasswordVisible(!passwordVisible)}>
+              {passwordVisible ? <IoEyeOffOutline /> : <IoEyeOutline />}
+            </span>
+          </div>
           <div className="forgot-password">
             <a href="#" className="forgot-password-link">Forgot Password?</a>
           </div>

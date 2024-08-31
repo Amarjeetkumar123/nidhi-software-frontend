@@ -58,6 +58,7 @@
     border: none;
     font-size: 16px;
     border-bottom: 1px solid #999;
+    color: #4e73df;
 
     &:focus {
       border-color: #4e73df;
@@ -96,6 +97,7 @@
     color: #4e73df;
     text-decoration: none;
     font-size: 14px;
+    cursor: pointer;
 
     &:hover {
       text-decoration: underline;
@@ -108,5 +110,15 @@
     margin-bottom: 8px;
     color: #5a5c69;
     font-size: 14px;
+  }
+
+  .login-password {
+    display: flex;
+    align-items: center;
+
+    .password-toggle-icon {
+      padding-bottom: 10px;
+      color: #4e73df;
+    }
   }
 }

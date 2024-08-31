@@ -42,7 +42,7 @@ const Sidebar = () => {
   const [openKyc, setOpenKyc] = useState(false);
 
   const MasterItems = [
-    { to: "/company/profile", label: "Company", Icon: BusinessIcon },
+    { to: "/companies", label: "Company", Icon: BusinessIcon },
     { to: "", label: "Branches", Icon: IoIosGitBranch },
     { to: "", label: "Directors", Icon: FaPeopleRoof },
     { to: "", label: "Agents", Icon: FaPeopleLine },
@@ -128,15 +128,6 @@ const Sidebar = () => {
             open={openUserList}
             handleClick={() => setOpenUserList(!openUserList)}
           />
-          <p className="title">USER</p>
-          <li>
-            <AccountCircleOutlinedIcon className="icon" />
-            <span>Profile</span>
-          </li>
-          <li>
-            <ExitToAppIcon className="icon" />
-            <span>Logout</span>
-          </li>
         </ul>
       </div>
       <div className="bottom">

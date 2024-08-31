@@ -1,10 +1,8 @@
-import Home from "./pages/home/Home";
+import Dashboard from "./pages/dashboard/Dashboard";
 import Login from "./pages/login/Login";
-import List from "./pages/list/List";
-import Single from "./pages/single/Single";
-import New from "./pages/new/New";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { productInputs, userInputs } from "./formSource";
+import { userInputs } from "./formSource";
+import ListUser from "./pages/user/ListUser";
 import "./style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
@@ -12,6 +10,11 @@ import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectRoutes";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Layout from "./components/Layout";
+import ListCompany from "./pages/company/ListCompany";
+import EditUser from "./pages/user/EditUser";
+import ViewUser from "./pages/user/ViewUser";
+import CreateUser from "./pages/user/CreateUser";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -21,13 +24,14 @@ function App() {
         <AuthProvider>
           <Routes>
             <Route path="/login" element={<Login />} />
-            <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
-            <Route path="/users" element={<ProtectedRoute><List /></ProtectedRoute>} />
-            <Route path="/users/:userId" element={<ProtectedRoute><Single /></ProtectedRoute>} />
-            <Route path="/users/new" element={<ProtectedRoute><New inputs={userInputs} title="Add New User" /></ProtectedRoute>} />
-            <Route path="/products" element={<ProtectedRoute><List /></ProtectedRoute>} />
-            <Route path="/products/:productId" element={<ProtectedRoute><Single /></ProtectedRoute>} />
-            <Route path="/products/new" element={<ProtectedRoute><New inputs={productInputs} title="Add New Product" /></ProtectedRoute>} />
+            <Route path="/" element={<Layout />} >
+              <Route index element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+              <Route path="companies" element={<ProtectedRoute><ListCompany /></ProtectedRoute>} />
+              <Route path="users" element={<ProtectedRoute><ListUser /></ProtectedRoute>} />
+              <Route path="users/view" element={<ProtectedRoute><ViewUser /></ProtectedRoute>} />
+              <Route path="users/:userId" element={<ProtectedRoute><EditUser /></ProtectedRoute>} />
+              <Route path="users/new" element={<ProtectedRoute><CreateUser inputs={userInputs} title="Add New User" /></ProtectedRoute>} />
+            </Route>
           </Routes>
         </AuthProvider>
       </BrowserRouter>

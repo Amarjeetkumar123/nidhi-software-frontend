@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     const location = useLocation();
-
+    const hostUrl = "http://localhost:13013";
     useEffect(() => {
         const checkAuth = () => {
             try {
@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
         try {
             const clientId = uuidv4();
             credentials.client_id = clientId;
-            const response = await axios.post('http://localhost:13013/user/login', credentials);
+            const response = await axios.post(`${hostUrl}/user/login`, credentials);
             const { token, user_id, role, refresh_token, username, email, name, server_unique_id } = response.data;
             const localStorageItems = {
                 user_id, email, username, token,
@@ -62,7 +62,7 @@ export const AuthProvider = ({ children }) => {
                     "Content-Type": "application/json",
                 },
             };
-            const response = await axios.post('http://localhost:13013/user/logout', payload, config);
+            const response = await axios.post(`${hostUrl}/user/logout`, payload, config);
             toast.success(response?.data?.message);
             localStorage.clear();
             setIsAuthenticated(false);
