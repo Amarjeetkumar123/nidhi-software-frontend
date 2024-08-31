@@ -1,9 +1,9 @@
-import "./addNewUser.scss";
+import "./createUser.scss";
 
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import { useState } from "react";
 
-const AddNewUser = ({ inputs, title }) => {
+const CreateUser = ({ inputs, title }) => {
   const [file, setFile] = useState("");
 
   return (
@@ -52,4 +52,4 @@ const AddNewUser = ({ inputs, title }) => {
   );
 };
 
-export default AddNewUser;
+export default CreateUser;
