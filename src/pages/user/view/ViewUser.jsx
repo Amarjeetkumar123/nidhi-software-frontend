@@ -2,7 +2,7 @@ import "./viewUser.scss";
 import Chart from "../../../components/chart/Chart";
 import List from "../../../components/table/Table";
 
-const Single = () => {
+const ViewUser = () => {
   return (
     <div className="single">
       <div className="singleContainer">
@@ -52,4 +52,4 @@ const Single = () => {
   );
 };
 
-export default Single;
+export default ViewUser;

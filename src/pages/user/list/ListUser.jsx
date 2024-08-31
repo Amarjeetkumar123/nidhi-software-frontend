@@ -1,7 +1,7 @@
 import "./listUser.scss"
 import Datatable from "../../../components/datatable/Datatable"
 
-const List = () => {
+const ListUser = () => {
   return (
     <>
       <Datatable />
@@ -9,4 +9,4 @@ const List = () => {
   )
 }
 
-export default List
+export default ListUser

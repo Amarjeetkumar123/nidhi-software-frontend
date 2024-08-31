@@ -42,7 +42,7 @@ const Sidebar = () => {
   const [openKyc, setOpenKyc] = useState(false);
 
   const MasterItems = [
-    { to: "/company/profile", label: "Company", Icon: BusinessIcon },
+    { to: "/companies", label: "Company", Icon: BusinessIcon },
     { to: "", label: "Branches", Icon: IoIosGitBranch },
     { to: "", label: "Directors", Icon: FaPeopleRoof },
     { to: "", label: "Agents", Icon: FaPeopleLine },
